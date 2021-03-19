@@ -8,7 +8,7 @@ class Shopify extends CurlShopify {
   protected $has_error = false;
 
   /**
-   * Return la premiere erreur rencontrer
+   * Return la premiere erreur rencontrer.
    *
    * @var string
    */
