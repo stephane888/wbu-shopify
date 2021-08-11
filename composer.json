@@ -3,7 +3,6 @@
 	"description": "API to manage a shopify site",
 	"type": "library",
 	"license": "MIT",
-	"version": "1.0.1",
 	"authors": [{
 			"name": "stephane888",
 			"email": "kksasteph888@gmail.com",
@@ -18,7 +17,7 @@
 	},
 	"autoload": {
 		"psr-4": {
-			"Wbu\\": "src/"
+			"Stephane888\\WbuShopify\\": "src/"
 		}
 	}
 }
