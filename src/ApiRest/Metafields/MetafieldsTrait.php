@@ -22,8 +22,7 @@ trait MetafieldsTrait {
 		if(! empty( $url )){
 			$this->path = $url;
 		}
-		$datas = $this->GetDatas();
-		return json_decode( $datas, true );
+		return $this->Get();
 	}
 	public function save(array $metafields){
 		$result = [];

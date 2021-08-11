@@ -5,6 +5,7 @@ namespace Stephane888\WbuShopify\ApiRest\Authentification;
 use Psr\Http\Message\ResponseInterface;
 use GuzzleHttp\Exception\RequestException;
 use GuzzleHttp\TransferStats;
+use Stephane888\WbuShopify\Exception\WbuShopifyException;
 
 /**
  * Ce fichier se charge de gerer l'authentification via le token.
@@ -14,22 +15,24 @@ use GuzzleHttp\TransferStats;
  */
 class IntegrationToken {
 	public $requestEndPoint;
-	private $Errors = false;
+	private $curl = null;
+	private $payLoad = null;
 	function __construct(array $configs = []){
-		$this->setConfigs( $configs );
+		if(! empty( $configs ))
+			$this->setConfigs( $configs );
 	}
 	public function setConfigs(array $configs = []){
 		if(! empty( $configs['domaine'] )){
 			$this->setHost( $configs['domaine'] );
 		}
 		else{
-			throw new \Exception( 'Hote shopify non definit' );
+			throw new WbuShopifyException( 'Hote shopify non definit' );
 		}
 		if(! empty( $configs['token'] )){
 			$this->accessToken = $configs['token'];
 		}
 		else{
-			throw new \Exception( 'Token non definit' );
+			throw new WbuShopifyException( 'Token non definit' );
 		}
 		
 		// on doit adopter l'approche definit au niveau de : https://docs.guzzlephp.org/en/6.5/quickstart.html?highlight=file
@@ -71,6 +74,9 @@ class IntegrationToken {
 	 */
 	private function requeteExecute(String $methode, string $data = null){
 		try{
+			if(! $this->curl){
+				throw new WbuShopifyException( 'Token non definit ou Hote shopify non definit' );
+			}
 			if($data){
 				$this->payLoad = $data;
 				$result = $this->curl->request( $methode, trim( $this->requestEndPoint, "/" ), [
@@ -111,15 +117,15 @@ class IntegrationToken {
 		}
 	}
 	protected function traitementRequest(ResponseInterface $result){
+		return $result->getStatusCode();
 		return $result->getBody()
 			->getContents();
 	}
 	function buildError(RequestException $e){
-		$this->Errors = true;
 		$body = $e->getResponse()
 			->getBody()
 			->getContents();
-		return [
+		$errors = [
 				'code'=> $e->getCode(),
 				'message'=> $e->getMessage(),
 				'vue par le serveur distant'=> $e->hasResponse() ? 'Oui' : 'Non',
@@ -139,6 +145,10 @@ class IntegrationToken {
 				'transferTime'=> $this->transferTime,
 				'handlerStats'=> $this->handlerStats
 		];
+		$msg = $e->getMessage();
+		$msg = explode( "\n", $msg );
+		throw new WbuShopifyException( $msg[0], $e->getResponse()
+			->getStatusCode() );
 	}
 	
 	/**
@@ -159,15 +169,6 @@ class IntegrationToken {
 			// 'Authorization' => "Basic " . $this->accessToken
 		];
 		return $this->headers;
-	}
-	
-	/**
-	 * Return true s'il ya une erreur;
-	 *
-	 * @return boolean
-	 */
-	function hasError(){
-		return $this->Errors;
 	}
 	public function setHost($domain){
 		$this->domain = $domain;
