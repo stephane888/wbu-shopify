@@ -1,5 +1,5 @@
 <?php
-namespace Wbu\ApiRest\Order;
+namespace Stephane888\WbuShopify\ApiRest\Order;
 
 /**
  * Class permettant de manipulers les attributs de l'object commande

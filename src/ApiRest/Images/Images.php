@@ -1,7 +1,7 @@
 <?php
-namespace Wbu\ApiRest\Images;
+namespace Stephane888\WbuShopify\ApiRest\Images;
 
-use Wbu\ApiRest\Shopify;
+use Stephane888\WbuShopify\ApiRest\Shopify;
 
 class Images extends Shopify {
 

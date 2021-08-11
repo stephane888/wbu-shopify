@@ -1,5 +1,5 @@
 <?php
-namespace Wbu\ApiRest\Fulfillment;
+namespace Stephane888\WbuShopify\ApiRest\Fulfillment;
 
 class TrackingCompany {
 

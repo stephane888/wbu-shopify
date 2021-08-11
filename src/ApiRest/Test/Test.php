@@ -1,5 +1,5 @@
 <?php 
-namespace Wbu\ApiRest\Test;
+namespace Stephane888\WbuShopify\ApiRest\Test;
 
 class Test{
     public function init() {

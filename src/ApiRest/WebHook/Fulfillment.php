@@ -1,5 +1,5 @@
 <?php
-namespace Wbu\ApiRest\WebHook;
+namespace Stephane888\WbuShopify\ApiRest\WebHook;
 
 /**
  * Cette classe retourne un object commande.
@@ -7,7 +7,7 @@ namespace Wbu\ApiRest\WebHook;
  * @author stephane
  *
  */
-use Wbu\ApiRest\WebHook\Traits\Order as TraitOrder;
+use Stephane888\WbuShopify\ApiRest\WebHook\Traits\Order as TraitOrder;
 
 class Fulfillment extends WebHook {
   use TraitOrder;

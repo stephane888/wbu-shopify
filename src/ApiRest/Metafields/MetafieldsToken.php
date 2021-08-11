@@ -1,7 +1,7 @@
 <?php
-namespace Wbu\ApiRest\Metafields;
+namespace Stephane888\WbuShopify\ApiRest\Metafields;
 
-use Wbu\ApiRest\Authentification\IntegrationToken;
+use Stephane888\WbuShopify\ApiRest\Authentification\IntegrationToken;
 
 class MetafieldsToken extends IntegrationToken {
   use MetafieldsTrait;

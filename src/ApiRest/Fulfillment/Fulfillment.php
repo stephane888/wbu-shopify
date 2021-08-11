@@ -1,7 +1,7 @@
 <?php
-namespace Wbu\ApiRest\Fulfillment;
+namespace Stephane888\WbuShopify\ApiRest\Fulfillment;
 
-use Wbu\ApiRest\Shopify;
+use Stephane888\WbuShopify\ApiRest\Shopify;
 
 class Fulfillment extends Shopify {
 

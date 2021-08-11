@@ -1,8 +1,8 @@
 <?php
-namespace Wbu\ApiRest\Articles;
+namespace Stephane888\WbuShopify\ApiRest\Articles;
 
-use Wbu\ApiRest\Shopify;
-use Wbu\ApiRest\Metafields\MetafieldsTrait;
+use Stephane888\WbuShopify\ApiRest\Shopify;
+use Stephane888\WbuShopify\ApiRest\Metafields\MetafieldsTrait;
 
 class Articles extends Shopify {
   use MetafieldsTrait;

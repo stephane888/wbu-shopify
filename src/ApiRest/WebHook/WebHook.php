@@ -1,5 +1,5 @@
 <?php
-namespace Wbu\ApiRest\WebHook;
+namespace Stephane888\WbuShopify\ApiRest\WebHook;
 
 class WebHook {
 

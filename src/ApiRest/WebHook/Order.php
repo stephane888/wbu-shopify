@@ -1,7 +1,7 @@
 <?php
-namespace Wbu\ApiRest\WebHook;
+namespace Stephane888\WbuShopify\ApiRest\WebHook;
 
-use Wbu\ApiRest\WebHook\Traits\Order as TraitOrder;
+use Stephane888\WbuShopify\ApiRest\WebHook\Traits\Order as TraitOrder;
 
 class Order extends WebHook {
   use TraitOrder;

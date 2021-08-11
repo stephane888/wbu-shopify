@@ -1,6 +1,6 @@
 <?php
-namespace Wbu\ApiRest\ClientsSpecifiquesAction;
-use Wbu\ApiRest\WbuShopify;
+namespace Stephane888\WbuShopify\ApiRest\ClientsSpecifiquesAction;
+use Stephane888\WbuShopify\ApiRest\WbuShopify;
 
 class UpdateMetafieldProductByOrderAttribute
 {

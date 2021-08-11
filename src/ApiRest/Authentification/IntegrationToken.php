@@ -1,5 +1,5 @@
 <?php
-namespace Wbu\ApiRest\Authentification;
+namespace Stephane888\WbuShopify\ApiRest\Authentification;
 
 use Psr\Http\Message\ResponseInterface;
 use GuzzleHttp\Exception\RequestException;

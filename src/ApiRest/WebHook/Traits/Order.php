@@ -1,5 +1,5 @@
 <?php
-namespace Wbu\ApiRest\WebHook\Traits;
+namespace Stephane888\WbuShopify\ApiRest\WebHook\Traits;
 
 trait Order {
 

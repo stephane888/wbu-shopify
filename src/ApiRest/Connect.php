@@ -1,5 +1,5 @@
 <?php
-namespace Wbu\ApiRest;
+namespace Stephane888\WbuShopify\ApiRest;
 
 class Connect extends CurlShopify {
 

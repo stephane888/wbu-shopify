@@ -1,8 +1,8 @@
 <?php
-namespace Wbu\ApiRest\Order;
+namespace Stephane888\WbuShopify\ApiRest\Order;
 
-use Wbu\ApiRest\Shopify;
-use Wbu\ApiRest\Metafields\MetafieldsTrait;
+use Stephane888\WbuShopify\ApiRest\Shopify;
+use Stephane888\WbuShopify\ApiRest\Metafields\MetafieldsTrait;
 
 class Order extends Shopify {
   use MetafieldsTrait;

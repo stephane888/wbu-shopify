@@ -1,5 +1,5 @@
 <?php
-namespace Wbu\ApiRest\Metafields;
+namespace Stephane888\WbuShopify\ApiRest\Metafields;
 
 use PhpParser\Error;
 

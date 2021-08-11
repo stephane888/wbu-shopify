@@ -1,7 +1,7 @@
 <?php
-namespace Wbu\ApiRest\Metafields;
+namespace Stephane888\WbuShopify\ApiRest\Metafields;
 
-use Wbu\ApiRest\Shopify;
+use Stephane888\WbuShopify\ApiRest\Shopify;
 
 class Metafields extends Shopify {
   use MetafieldsTrait;
