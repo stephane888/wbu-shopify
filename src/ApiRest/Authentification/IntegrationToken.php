@@ -111,8 +111,8 @@ class IntegrationToken
 	private function requeteExecute(String $methode, string $data = null)
 	{
 		try {
-			if(! $this->curl) {
-				throw new WbuShopifyException('Token non definit ou Hote shopify non definit');
+			if(! $this->curl || ! $this->requestEndPoint) {
+				throw new WbuShopifyException('Token non definit ou Hote shopify ou EndPoint non definit');
 			}
 			if($data) {
 				$this->payLoad = $data;
@@ -157,7 +157,6 @@ class IntegrationToken
 
 	protected function traitementRequest(ResponseInterface $result)
 	{
-		return $result->getStatusCode();
 		return $result->getBody()->getContents();
 	}
 
